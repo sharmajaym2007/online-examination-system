@@ -24,7 +24,7 @@ public class OnlineExamController {
 	
 	ObjectMapper mapper = new ObjectMapper();
 	
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public ResponseEntity<User> login(String userName, String password) {
 		User user = examService.getLoginInfo(userName, password);
 
