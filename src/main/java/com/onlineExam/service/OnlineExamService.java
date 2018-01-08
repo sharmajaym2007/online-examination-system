@@ -11,14 +11,18 @@ import com.onlineExam.resource.User;
 @Component
 public class OnlineExamService {
 
-	public User getLoginInfo(String userName, String password) {
+	public User getLoginInfo(User u) {
 		
-		User u = new User();
-		u.setID(1);
-		u.setName(userName);
-		u.setPassword(password);
-		
-		return (u != null) ? u : null;
+//		User u = new User();
+		u.setId(1);
+//		u.setUserName((userName);
+//		u.setPassword(password);
+//		
+		if (u != null) {
+			u.setValid(true);
+			return u;
+		}
+		return null;
 	}
 	
 	public List<QuestionAnswers> getQuestionAnswers() {		

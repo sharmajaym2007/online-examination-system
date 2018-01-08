@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,11 +26,13 @@ public class OnlineExamController {
 	
 	ObjectMapper mapper = new ObjectMapper();
 	
-	@PostMapping("/login")
-	public ResponseEntity<User> login(String userName, String password) {
-		User user = examService.getLoginInfo(userName, password);
-
-		return new ResponseEntity<>(user, new HttpHeaders(), HttpStatus.OK);
+	@PostMapping(value = "/logins")
+	@CrossOrigin(origins = "http://localhost:4200")
+	public ResponseEntity<User> login(@RequestBody User user) {
+		User user1 = examService.getLoginInfo(user);
+		
+		
+		return new ResponseEntity<>(user1, new HttpHeaders(), HttpStatus.OK);
 	}
 	
 	@GetMapping("/questions")
