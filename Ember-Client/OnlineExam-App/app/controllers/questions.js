@@ -7,10 +7,6 @@ export default Controller.extend({
   loginDetails: Ember.inject.service('login-details'),
   //login: this.model.login,
 
-  init: function () {
-    this._super();
-    //this.get('loginDetails').add(login.id);
-  },
 
   ajax: Ember.inject.service(),
   actions: {

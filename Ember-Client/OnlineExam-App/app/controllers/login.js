@@ -11,6 +11,7 @@ export default Controller.extend({
       function transitionToPost(login) {
         alert('successfull');
         alert(login.id)
+        self.set('token', login.id)
         self.transitionToRoute('welcome');
       }
 
