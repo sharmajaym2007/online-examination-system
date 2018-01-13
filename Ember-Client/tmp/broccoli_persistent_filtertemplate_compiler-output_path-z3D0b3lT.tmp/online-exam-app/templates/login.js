@@ -1,1 +1,0 @@
-export default Ember.HTMLBars.template({"id":"rOCpSNoB","block":"{\"symbols\":[],\"statements\":[[1,[25,\"login-form\",null,[[\"login\",\"errors\",\"onSave\"],[[20,[\"model\",\"login\"]],[20,[\"model\",\"errors\"]],[25,\"action\",[[19,0,[]],\"onSaveLogin\"],null]]]],false],[0,\"\\n\"]],\"hasEval\":false}","meta":{"moduleName":"online-exam-app/templates/login.hbs"}});

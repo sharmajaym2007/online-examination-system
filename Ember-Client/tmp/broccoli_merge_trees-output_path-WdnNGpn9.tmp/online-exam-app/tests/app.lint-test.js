@@ -1,1 +1,0 @@
-/Users/jay.sharma/Documents/workspace/online-exam-management-system/Ember-Client/OnlineExam-App/tmp/broccoli_merge_trees-input_base_path-BCAYx2U1.tmp/2/online-exam-app/tests/app.lint-test.js

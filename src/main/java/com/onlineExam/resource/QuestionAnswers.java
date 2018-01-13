@@ -3,11 +3,11 @@ package com.onlineExam.resource;
 import java.util.List;
 
 public class QuestionAnswers {
-	private int questionID;
+	private int id;
 	private String question;
 	private List<String> choices;
 	private String userChoice;
-	private String correctAnswers;
+	private String correctAnswer;
 	
 	public String getUserChoice() {
 		return userChoice;
@@ -28,16 +28,17 @@ public class QuestionAnswers {
 	public void setChoices(List<String> choices) {
 		this.choices = choices;
 	}
-	public int getQuestionID() {
-		return questionID;
+	public int getId() {
+		return id;
 	}
-	public void setQuestionID(int questionID) {
-		this.questionID = questionID;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getCorrectAnswers() {
-		return correctAnswers;
+	public String getCorrectAnswer() {
+		return correctAnswer;
 	}
-	public void setCorrectAnswers(String correctAnswers) {
-		this.correctAnswers = correctAnswers;
+	public void setCorrectAnswer(String correctAnswer) {
+		this.correctAnswer = correctAnswer;
 	}
+
 }

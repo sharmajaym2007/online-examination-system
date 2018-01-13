@@ -1,5 +1,6 @@
 package com.onlineExam.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ public class OnlineExamService {
 		
 //		User u = new User();
 		u.setId(1);
+		u.setName("jay");
 //		u.setUserName((userName);
 //		u.setPassword(password);
 //		
@@ -26,8 +28,36 @@ public class OnlineExamService {
 	}
 	
 	public List<QuestionAnswers> getQuestionAnswers() {		
+		QuestionAnswers question = new QuestionAnswers();
+		question.setId(1);
+		question.setQuestion("What is your name?");
+		question.setCorrectAnswer("A");
+		// question.setUserChoice("B");
 		
-		return null;
+		List<String> choices = new ArrayList<>();
+		choices.add("Sandeep");
+		choices.add("Jay");
+		choices.add("Mukesh");
+		choices.add("Ranjan");
+		question.setChoices(choices);
+		
+		QuestionAnswers question1 = new QuestionAnswers();
+		question1.setId(2);
+		question1.setQuestion("What is your Surname?");
+		question1.setCorrectAnswer("B");
+		// question1.setUserChoice("A");
+		choices = new ArrayList<>();
+		choices.add("Verma");
+		choices.add("Sharma");
+		choices.add("Kumar");
+		choices.add("Kale");
+		question1.setChoices(choices);
+		
+		List<QuestionAnswers> list = new ArrayList<QuestionAnswers>();
+		list.add(question);
+		list.add(question1);
+		
+		return list;
 	}
 	
 	
@@ -55,8 +85,8 @@ public class OnlineExamService {
 		
 		for(QuestionAnswers currentUserQuestionAnswers : userQuestionAnswers) {
 			for(QuestionAnswers currentOrgQA : orgQA) {
-				if(currentUserQuestionAnswers.getQuestionID() == currentOrgQA.getQuestionID()) {
-					if(currentUserQuestionAnswers.getUserChoice().equals(currentOrgQA.getCorrectAnswers())) {
+				if(currentUserQuestionAnswers.getId() == currentOrgQA.getId()) {
+					if(currentUserQuestionAnswers.getUserChoice().equals(currentOrgQA.getCorrectAnswer())) {
 						correctAnswers++;
 					}
 				}
