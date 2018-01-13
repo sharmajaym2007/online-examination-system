@@ -1,0 +1,11 @@
+@import "bootstrap";
+
+body {
+  padding-top: 20px;
+}
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+@import "ember-bootstrap/bootstrap";

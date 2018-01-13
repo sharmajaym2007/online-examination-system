@@ -1,0 +1,21 @@
+
+{{#bs-form formLayout="horizontal" model=this onSubmit=(action "submitQuestions") as |form|}}
+{{login.name}}
+ {{#each model.questions as |question|}}
+    <p class = "col-md-12">{{question.id}}: {{question.question}}<br/>
+      {{#bs-button-group
+        value=question.userChoice
+        type="radio"
+        onChange=(action (mut question.userChoice)) as |bg|}}
+        {{#each question.choices as |Choices|}}
+          {{#bg.button value=Choices}}{{Choices}}{{/bg.button}}
+
+        {{/each}}
+        <p>You selected: {{question.userChoice}}</p>
+      {{/bs-button-group}}
+      </p>
+  {{/each}}
+{{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+{{/bs-form}}
+
+{{questions-form}}

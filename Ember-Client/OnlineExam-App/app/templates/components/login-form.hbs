@@ -1,0 +1,13 @@
+<h1>This is login page</h1>
+<form>
+<div class="form-group">
+  <label>User Name</label>
+  {{input type="text" class="form-control" value=login.userName placeholder="User Name"}}
+</div>
+<div class="form-group">
+  <label>password</label>
+  {{input type="text" class="form-control" value=login.password placeholder="Password"}}
+</div>
+<button {{action 'buttonLogin'}} class="btn btn-primary">Login</button>
+</form>
+{{outlet}}
