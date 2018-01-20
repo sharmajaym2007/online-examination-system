@@ -13,6 +13,10 @@ Router.map(function() {
   this.route('login', {path: '/oems/login' });
   this.route('welcome');
   this.route('questions',{path: '/oems/questions/' });
+  this.route('staff', {path: '/oems/staff/' });
+  this.route('review');
+  this.route('review',{path: '/oems/review/' });
+  
 });
 
 export default Router;

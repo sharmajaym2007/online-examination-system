@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +46,13 @@ public class OnlineExamController {
 		return new ResponseEntity<>(questions, new HttpHeaders(), HttpStatus.OK);
 	}
 	
+	@GetMapping("/users")
+	public ResponseEntity<List<User>> getAllUsers() {
+		List<User> users = examService.getAllUsers();
+
+		return new ResponseEntity<>(users, new HttpHeaders(), HttpStatus.OK);
+	}
+	
 	@GetMapping("/questions/{id}")
 	public ResponseEntity<QuestionAnswers> getQuestion(@PathVariable("id") int id) {
 		QuestionAnswers questions = new QuestionAnswers();
@@ -77,5 +85,11 @@ public class OnlineExamController {
 		return new ResponseEntity<>("", new HttpHeaders(), HttpStatus.CREATED);
 	}
 	
+	@PutMapping("/questions/{id}")
+	public ResponseEntity<?> updateQuestion(@PathVariable("id") int id, @RequestBody Object questionAnswers) {
+		//examService.updateQuestion(questionAnswers);
+		
+		return new ResponseEntity<>(null, new HttpHeaders(), HttpStatus.OK);
+	}
 	
 }

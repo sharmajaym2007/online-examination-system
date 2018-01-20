@@ -1,0 +1,6 @@
+{{yield}}
+ {{#each model.students as |users|}}
+    <p class = "col-md-12">
+      {{users.name}}: {{users.userName}}: {{users.role}}<br/>
+    </p>
+  {{/each}}

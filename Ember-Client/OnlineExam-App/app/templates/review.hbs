@@ -1,0 +1,32 @@
+<body>
+{{#each model.questions as |question|}}
+     <div class="col-xs-12">
+     <span class = "col-xs-8">{{question.id}}: {{question.question}}<br/>
+          {{#if question.isEditEnabled}}
+            {{#bs-button-group
+              value=question.userChoice
+              type="radio"
+              onChange=(action (mut question.userChoice)) as |bg|}}
+              {{#each question.choices as |Choices|}}
+                {{#bg.button value=Choices}}{{Choices}}{{/bg.button}}
+              {{/each}}
+           {{/bs-button-group}}
+         {{else}}
+          <p>
+           <b>You selected:</b>
+           <i>{{question.userChoice}}</i>
+          </p>
+         {{/if}}
+     </span>
+     <span class="col-xs-4">
+       {{#if question.isEditEnabled}}
+        <button class="pull-right" {{action 'toggleQuestionsRadio' question}}>Close</button>
+       {{else}}
+        <button class="pull-right" {{action 'toggleQuestionsRadio' question}}>Edit</button>
+       {{/if}}
+     </span>
+  </div>
+{{/each}}
+<submit {{action 'submitQuestions'}} class="btn btn-primary">Submit</submit>
+</body>
+{{outlet}}

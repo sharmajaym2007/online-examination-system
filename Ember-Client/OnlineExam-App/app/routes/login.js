@@ -10,6 +10,6 @@ model() {
     'login':this.store.createRecord('login')
   });
 
-}
+},
 
 });

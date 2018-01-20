@@ -9,13 +9,11 @@
         onChange=(action (mut question.userChoice)) as |bg|}}
         {{#each question.choices as |Choices|}}
           {{#bg.button value=Choices}}{{Choices}}{{/bg.button}}
-
         {{/each}}
-        <p>You selected: {{question.userChoice}}</p>
       {{/bs-button-group}}
       </p>
   {{/each}}
-{{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+{{bs-button defaultText="Review" type="primary" buttonType="submit"}}
 {{/bs-form}}
 
 {{questions-form}}

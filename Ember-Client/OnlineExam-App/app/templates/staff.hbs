@@ -1,0 +1,11 @@
+{{outlet}}
+{{#bs-tab as |tab|}}
+  {{#tab.pane title="Students"}}
+    {{staff-user-form model=model}}
+  {{/tab.pane}}
+  {{#tab.pane title="Questions"}}
+    {{staff-question-form model=model errors=model.errors onSave=(action "onSaveUpdateQuestion") }}
+  {{/tab.pane}}
+  {{#tab.pane title="Config"}}
+  {{/tab.pane}}
+{{/bs-tab}}
