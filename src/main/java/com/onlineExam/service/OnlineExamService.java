@@ -4,15 +4,20 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.onlineExam.resource.QuestionAnswers;
-import com.onlineExam.resource.Result;
-import com.onlineExam.resource.User;
+import com.onlineExam.dao.OnlineExamDao;
+import com.onlineExam.model.QuestionAnswers;
+import com.onlineExam.model.Result;
+import com.onlineExam.model.User;
 
 @Component
 public class OnlineExamService {
-
+	
+	@Autowired
+	private OnlineExamDao onlineExamDao;
+	
 	public User getLoginInfo(User u) {
 		
 //		User u = new User();
@@ -85,8 +90,14 @@ public class OnlineExamService {
 		return res;
 	}
 	
-	public void addStudent(User user) {
+	public void addUser(User user) throws Exception {
+		User u = new User();
+		u.setName("testJay");
+		u.setRole("staff");
+		u.setUserName("sharmajay");
+		u.setPassword("abc123");
 		
+		onlineExamDao.AddUser(u);
 	}
 	
 	public void addQuestion(QuestionAnswers questionAnswers) {

@@ -1,29 +1,8 @@
 {{yield}}
 <form>
+  <b class="col-xs-12">Existing Questions:</b>
   <br/>
-  <p class = "col-xs-10">
-      {{input type="hidden" class="form-control" value=question.id}}
-    <span class = "col-xs-2">
-      {{input type="text" class="form-control" value=question.question}}
-    </span>
-    <span class = "col-xs-2">
-      {{input type="text" class="form-control" value=question.correctAnswer}}
-    </span>
-    <span class = "col-xs-8">
-      {{#each question.choices as |uc|}}
-      <span class = "col-xs-3">
-        {{input type="text" class="form-control" value=uc}}
-      </span>
-      {{/each}}
-    </span>
-  </p>
-  <p class="col-xs-2">
-      <submit {{action 'buttonLogin'}} class="btn btn-primary">Update</submit>
-    <br/>
-  </p>
-
-
- {{#each model.questions as |question|}}
+  {{#each model.questions as |question|}}
     <p class = "col-xs-10">
         {{input type="hidden" class="form-control" value=question.id}}
       <span class = "col-xs-2">
@@ -47,5 +26,33 @@
       <br/>
     </p>
   {{/each}}
-
+  <br/>
+  <b class="col-xs-12">Add New Question:</b>
+  <br/>
+  <p class = "col-xs-10">
+    <span class = "col-xs-2">
+      {{input type="text" class="form-control" value=question.question}}
+    </span>
+    <span class = "col-xs-2">
+      {{input type="text" class="form-control" value=newquestion.correctAnswer}}
+    </span>
+    <span class = "col-xs-8">
+        <span class = "col-xs-2">
+          {{input type="text" class="form-control" value=newquestion.choices.choice1}}
+        </span>
+        <span class = "col-xs-2">
+          {{input type="text" class="form-control" value=newquestion.choices.choice2}}
+        </span>
+        <span class = "col-xs-2">
+          {{input type="text" class="form-control" value=newquestion.choices.choice3}}
+        </span>
+        <span class = "col-xs-2">
+          {{input type="text" class="form-control" value=newquestion.choices.choice4}}
+        </span>
+    </span>
+  </p>
+  <p class="col-xs-2">
+      <submit {{action 'buttonLogin'}} class="btn btn-primary">Update</submit>
+    <br/>
+  </p>
 </form>

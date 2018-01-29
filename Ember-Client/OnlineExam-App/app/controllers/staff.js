@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  ajax: Ember.inject.service(),
   actions: {
     init: function() {
        this._super();
@@ -8,7 +9,11 @@ export default Controller.extend({
        alert(students.toArray())
     },
     onSaveUpdateQuestion: function(question) {
-      question.save();
+      return this.get('ajax').request('/questions/'+question.id, {
+        method: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify(question)
+      });
     }
   }
 });

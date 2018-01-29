@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.onlineExam.resource.QuestionAnswers;
-import com.onlineExam.resource.Result;
-import com.onlineExam.resource.User;
+import com.onlineExam.model.QuestionAnswers;
+import com.onlineExam.model.Result;
+import com.onlineExam.model.User;
 import com.onlineExam.service.OnlineExamService;
 
 @RestController
@@ -71,9 +71,9 @@ public class OnlineExamController {
 		return new ResponseEntity<>(res, new HttpHeaders(), HttpStatus.OK);
 	}
 	
-	@PostMapping("/addStudent")
-	public ResponseEntity<?> addStudent(User user) {
-		examService.addStudent(user);
+	@PostMapping("/addUser")
+	public ResponseEntity<?> addStudent(User user) throws Exception {
+		examService.addUser(user);
 		
 		return new ResponseEntity<>("", new HttpHeaders(), HttpStatus.CREATED);
 	}
@@ -86,10 +86,10 @@ public class OnlineExamController {
 	}
 	
 	@PutMapping("/questions/{id}")
-	public ResponseEntity<?> updateQuestion(@PathVariable("id") int id, @RequestBody Object questionAnswers) {
+	public ResponseEntity<?> updateQuestion(@PathVariable("id") int id, @RequestBody QuestionAnswers questionAnswers) {
 		//examService.updateQuestion(questionAnswers);
 		
-		return new ResponseEntity<>(null, new HttpHeaders(), HttpStatus.OK);
+		return new ResponseEntity<>("{}", new HttpHeaders(), HttpStatus.OK);
 	}
 	
 }
