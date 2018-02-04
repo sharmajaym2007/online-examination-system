@@ -21,7 +21,6 @@ export default Controller.extend({
       //   contentType: 'application/json',
       //   data: JSON.stringify(questions)
       // });
-    },
-
+    }
   }
 });

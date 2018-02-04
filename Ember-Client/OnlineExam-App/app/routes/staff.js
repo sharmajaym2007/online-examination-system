@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  model(){
+  /*model(){
     return Ember.RSVP.hash({
       'students': this.get('store').findAll('user'),
       'questions': this.get('store').findAll('question')
@@ -9,5 +9,5 @@ export default Route.extend({
             question.set('isEditEnabled', false);
       })
     });
-  }
+  }*/
 });

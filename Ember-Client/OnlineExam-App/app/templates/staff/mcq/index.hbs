@@ -1,0 +1,25 @@
+<h2>List of Questions</h2>
+<div class="row">
+  {{#each model as |questionT|}}
+    <div class="col-md-12">
+      <div class="panel panel-default user-item">
+        <div class="panel-heading">
+          <h3 class="panel-title">Answer: {{questionT.correctAnswer}}</h3>
+        </div>
+        <div class="panel-body bg-info">
+          <p>Question: {{questionT.question}}</p>
+        </div>
+        <div class="panel-body bg-success">
+          <p>choice A: {{questionT.choiceA}}</p>
+          <p>choice B: {{questionT.choiceB}}</p>
+          <p>choice C: {{questionT.choiceC}}</p>
+          <p>choice D: {{questionT.choiceD}}</p>
+        </div>
+        <div class="panel-footer text-right">
+          {{#link-to 'staff.mcq.edit' questionT.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+          <button class="btn btn-danger btn-xs" {{action 'deleteQuestion' questionT}}>Delete</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

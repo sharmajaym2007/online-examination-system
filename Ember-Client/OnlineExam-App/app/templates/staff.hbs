@@ -1,11 +1,35 @@
+<h1>Admin</h1>
+
+<div class="well">
+  <ul class="nav nav-pills">
+    <div class="btn-group">
+      <button type="button" class="btn btn-success">Users</button>
+      <button type="button" class="btn btn-success dropdown-toggle"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        {{#link-to 'staff.users.index' tagName="li"}}<a href="">List all</a>{{/link-to}}
+        {{#link-to 'staff.users.new' tagName="li"}}<a href="">Add new</a>{{/link-to}}
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-info">Questions</button>
+      <button type="button" class="btn btn-info dropdown-toggle"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        {{#link-to 'staff.mcq.index' tagName="li"}}<a href="">List all</a>{{/link-to}}
+        {{#link-to 'staff.mcq.new' tagName="li"}}<a href="">Add new</a>{{/link-to}}
+      </ul>
+    </div>
+
+  </ul>
+</div>
+
+
 {{outlet}}
-{{#bs-tab as |tab|}}
-  {{#tab.pane title="Students"}}
-    {{staff-user-form model=model}}
-  {{/tab.pane}}
-  {{#tab.pane title="Questions"}}
-    {{staff-question-form model=model errors=model.errors onSave=(action "onSaveUpdateQuestion") }}
-  {{/tab.pane}}
-  {{#tab.pane title="Config"}}
-  {{/tab.pane}}
-{{/bs-tab}}

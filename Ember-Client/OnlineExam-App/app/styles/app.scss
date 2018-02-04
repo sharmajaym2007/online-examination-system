@@ -8,4 +8,13 @@ body {
   box-sizing: content-box;
 }
 
+html {
+  overflow-y: scroll;
+}
+
+.user-item {
+  min-height: 150px;
+}
+
+
 @import "ember-bootstrap/bootstrap";

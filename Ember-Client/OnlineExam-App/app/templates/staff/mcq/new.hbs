@@ -1,0 +1,46 @@
+<h2>Add Question</h2>
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Question</label>
+    <div class="col-sm-10">
+      {{textarea  value=model.question class="form-control" placeholder="The Question"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Correct Answer</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.correctAnswer class="form-control" placeholder="Correct Answer"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Choice A</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.choiceA class="form-control" placeholder="Choice A"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Choice B</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.choiceB class="form-control" placeholder="Choice B"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Choice C</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.choiceC class="form-control" placeholder="Choice C"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Choice D</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.choiceD class="form-control" placeholder="Choice D"}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" {{action 'saveQuestionR' model}}>Add Question</button>
+    </div>
+  </div>
+</div>

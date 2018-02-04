@@ -7,10 +7,11 @@ export default Controller.extend({
       var self = this;
       function transitionToPost(login) {
         alert('successfull');
-        console.log('->------>>>>>>>'+login.password);
+        console.log('->------>>>>>>>'+login.name);
         self.set('token', login.id)
 
-        if(login.category === 'staff') {
+        console.log(login)
+        if(login.role == 'staff') {
           self.transitionToRoute('staff');
         }
         else {

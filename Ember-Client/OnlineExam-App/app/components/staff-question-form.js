@@ -6,8 +6,10 @@ export default Component.extend({
      this._super();
     },
     updateQuestion: function(question) {
-      console.log(question)
       this.get('onSave')(question);
+    },
+    deleteQuestion: function(question) {
+      this.get('onDelete')(question);
     }
   }
 });

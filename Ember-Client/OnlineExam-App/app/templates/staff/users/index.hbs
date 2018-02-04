@@ -1,0 +1,20 @@
+<h2>List Of Students/Staff</h2>
+<div class="row">
+  {{#each model as |studentsT|}}
+    <div class="col-md-4">
+      <div class="panel panel-primary user-item">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{studentsT.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <p>User Name: {{studentsT.userName}}</p>
+          <p>Role: {{studentsT.role}}</p>
+        </div>
+        <div class="panel-footer text-right">
+          {{#link-to 'staff.users.edit' studentsT.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+          <button class="btn btn-danger btn-xs" {{action 'deleteUser' studentsT}}>Delete</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

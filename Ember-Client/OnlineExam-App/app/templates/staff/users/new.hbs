@@ -1,0 +1,33 @@
+<h2>Add a new Student/Staff</h2>
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.name class="form-control" placeholder="The name of the student/staff"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">User Name</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.userName class="form-control" placeholder="The User Name of the student/staff"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Role</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.role class="form-control" placeholder="The Role of the student/staff"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.password class="form-control" placeholder="The Password of the student/staff"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" {{action 'saveUserR' model}}>Add to Student/Staff</button>
+    </div>
+  </div>
+</div>
